@@ -1,0 +1,105 @@
+﻿
+@model FaqPageNewModel
+
+
+<!--body content wrap start-->
+<div class="main">
+
+    <partial name="_breadcrumb" model="Model.Breadcrumb" />
+    <!--promo section start-->
+    <section class="promo-section ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-9">
+                    <div class="section-heading mb-5">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="lead">
+                            Quickly morph client-centric results through performance based applications. Proactively facilitate professional human capital for cutting-edge.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--pricing faq start-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="accordion-1" class="accordion accordion-faq">
+
+                        @foreach (var item in Model.AnswerQuestions)
+                        {<div class="card">
+    <div class="card-header py-4" id="heading-1-1" data-toggle="collapse" role="button"
+         data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+        <h6 class="mb-0"><span class="ti-receipt mr-3"></span>@item.Answer</h6>
+    </div>
+    <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1"
+         data-parent="#accordion-1">
+        <div class="card-body">
+            <p>@item.Questions</p>
+        </div>
+    </div>
+</div>
+
+                        }
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="accordion-2" class="accordion accordion-faq">
+                        @foreach (var item in Model.AnswerQuestions)
+                        {<div class="card">
+    <div class="card-header py-4" id="heading-2-1" data-toggle="collapse" role="button"
+         data-target="#collapse-2-1" aria-expanded="false" aria-controls="collapse-2-1">
+        <h6 class="mb-0"><span class="ti-receipt mr-3"></span> @item.Answer</h6>
+    </div>
+    <div id="collapse-2-1" class="collapse" aria-labelledby="heading-2-1"
+         data-parent="#accordion-2">
+        <div class="card-body">
+            <p>@item.Questions</p>
+        </div>
+    </div>
+</div>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <!--pricing faq end-->
+        </div>
+    </section>
+    <!--promo section end-->
+
+    <section class="gray-light-bg ptb-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-9 col-lg-8">
+                    <div class="section-heading mb-3 text-center">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="lead">
+                            Quickly morph client-centric results through performance based applications. Proactively facilitate professional human capital for cutting-edge.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @foreach (var item in Model.AskedQuestions)
+                {<div class="col-md-6">
+    <div class="single-faq mt-4">
+        <h5>@item.Answer</h5>
+        <p>
+            @item.Questions
+        </p>
+    </div>
+</div>
+
+                }
+
+                
+               
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<!--body content wrap end-->
